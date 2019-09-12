@@ -8,10 +8,6 @@ transactioncount = 0; //how to max at 500?
    Right now im assuming that the ppl var will keep
 		track of the total number of profiles
 		successfully created
-
-   pp doesn't know if i can store profiles
-	without a model/database
-	Thinking of using classes
 */
 
 class Profile {
@@ -28,32 +24,24 @@ class Profile {
 
 	/* Profile variables
 
-	id: corresponds with global ppl count
-	firstName: user input. If blank, generate random name
-	transactionIds & valSpent: linked by index to keep track of how much spent at each transaction
-		valSpent: pos if person paid, neg if person owes something
-	*/
-
-	/* Class Methods
+	id
+	firstName
+	transactionIds
+	valSpent
+	
+	Class Methods
 		Type: Update on Profile
 	*/
 	
-	/* Adding Transaction Id and amount owed
-		Warning: used after owedAmt = (bill)/(num of ppl who split) 
-			has already been calculated by separate Transaction class function
-	
-		Parameters: transactionId determined by global counter var
-					owedAmt calculated in Transaction class function
-	*/
-
+	// Adding Transaction Id and amount owed
 	function addTransaction(id, owedAmt) {
 		this.transactionIds.push(id);
 		this.valSpent.push(owedAmt);
 	}
 
-	// Class Method: when person pays for the bill
-	// Amount the person owes the group is deducted
-	// transactionIds: always 888 for when person pays bill
+	/* 
+	*/
+	
 	function paidBill (paidAmt) {
 		this.transactionIds.push(888);
 		this.valSpent.push(owedAmt); 

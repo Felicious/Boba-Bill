@@ -55,6 +55,12 @@ Get total money
 ##### function getOwedDetails()
 Collapse "details" button to display costs for each transaction
 
+*Returns*: 
+- List of name/description of transaction
+- paired with expenditure of each transaction
+
+TODO: Requires additional getName function from Transaction class
+
 
 ### 2. Add Transaction function 
     This is a multi-step query from the user.

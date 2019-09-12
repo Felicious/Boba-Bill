@@ -14,20 +14,28 @@ name, how much they owe, need to be paid (this is the result, also used to creat
 #### Class Methods: Update Type
 
 ##### addTransaction(id, owedAmt)
-Adding Transaction Id and amount owed
+
+Adding Transaction Id and amount owed.
+
 *Parameters*: 
     - transactionId determined by global counter var
 	- owedAmt calculated in Transaction class function
-Warning: used after owedAmt = (bill)/(num of ppl who split) has already been calculated by separate Transaction class function
+
 *Returns*: updated transactionIds[] and owedAmt[]
 
+Notes: function call made after owedAmt = (bill)/(num of ppl who split) has already been calculated by separate Transaction class function
+
 ##### paidBill (paidAmt)
-Add transaction info for when person pays
+
+Add transaction info for when person pays.
+
 *Parameter* : 
     - paidAmt, or rather, the amount person paid
+
 *Returns*: 
     - transactionid of a paid bill (always 888) added to transactionIds[] 
     - positive val of paidAmt added to owedAmt[]
+
 Notes: 
     - paidAmt is positive val: 
     - Amount the person owes the group is deducted

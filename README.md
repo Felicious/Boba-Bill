@@ -46,6 +46,16 @@ Notes:
 - Amount the person owes the group is deducted
 - transactionIds: always 888 for when person pays bill
 
+#### Class Methods: Getter Type
+##### itsPayDay()
+Get total money
+
+*Return*: total amount person owed
+
+##### function getOwedDetails()
+Collapse "details" button to display costs for each transaction
+
+
 ### 2. Add Transaction function 
     This is a multi-step query from the user.
     Step 1: Total spent

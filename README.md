@@ -1,0 +1,37 @@
+# Boba-Bill
+Front-end app that calculates how much each person needs to pay when splitting the bill, during a multi-transaction hangout
+
+## Features
+### 1. Profiles
+name, how much they owe, need to be paid (this is the result, also used to create new transactions)
+
+### 2. Add Transaction function 
+    This is a multi-step query from the user.
+    Step 1: Total spent
+        Details: requires profile (checkbox selection) of person who paid (divided between the num of ppl checked, so account for split bills)
+    Step 2: Who actually ate?
+        Check the profile boxes of the people who will be billed for this transaction. The total spent will be divided among the number of checked persons here and each person will be charged the value of the quotient) 
+        Note: might need to add a feature where person A pays person B specifically (maybe this will be a single transaction, where person A ate and person B paid)
+    Step 3: Transaction summary
+        Who ate, which ppl paid, and what each person owes (this value will be added to total.
+    
+    Now, this single transaction is completed and the user can add more when they go to the next place. At any point, they can press the button:
+    Total Transactions
+    And this will total all expenditures and how much each person owes for every person with a profile (more info below)
+      
+### 3. Sugar Mama/Baba option.
+    In each persons profile, they can select whether they're a sugar mama or daddy for other profile(s), and in the summary at the end, it'll detail how much they need to pay in addition how much they will pay on behalf of another in Total Transaction
+    
+### 4. Total Transaction function 
+    This displays, for each person with a profile, the expense and owe-ing history with a total of either a positive or negative dollar value. 
+    Positive: need to get paid back $xx dollars from the others 
+    Negative: need to pay back $xx to someone. 
+    
+    Now, the app will calculate who pays back whom.
+    In the profiles section, each person will fill out what kind of currency they possess and can accept:
+    -Cash
+    -Venmo
+    -Apple/Google/Samsung Pay
+    -Other kinds of electronic currency
+
+    And the app will figure out who can pay who what amount. (Not sure about this part as the app will prob have insufficient information to figure out the entire paying back situation. Might be sufficient to figure out how much 1 person owes to "the group" and how much 1 person needs to get paid back by "the group".) 

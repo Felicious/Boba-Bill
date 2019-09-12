@@ -43,4 +43,9 @@ let str = new Profile(user_input); //USER INPUT
 ppl += 1;
 
 //random names used for when the user leaves name empty
-var randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter"];
+var randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter",
+					"Creme", "Brulee", "Milk", "Earl", 
+					"Gray", "Kuro", "Sugar", "Buddha",
+					"Latte", "Ichigo", "Sakura", "Shiba",
+					"Corgi", "Bogi"
+					];

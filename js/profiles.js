@@ -1,6 +1,16 @@
 ppl = 0;
 transactioncount = 0; //how to max at 500?
 
+// helper function: find index of id
+	function findIndex(id) {
+		var i;
+		for (i = 0; i < this.transactionIds.length; i++) {
+			if (this.transactionIds[i] == id)
+				return i;
+		}
+		// what happens when it can't find the index?
+	}
+
 /* One question:
    if the user clicks on the button (which
 		opens the function more than once, would 
@@ -39,26 +49,58 @@ class Profile {
 		this.valSpent.push(owedAmt);
 	}
 
-	/* 
-	*/
-	
+	// Add transaction info for when person pays.
 	function paidBill (paidAmt) {
 		this.transactionIds.push(888);
-		this.valSpent.push(owedAmt); 
+		this.valSpent.push(paidAmt); 
 	}
 
-	//  Class Method: get total money
+	// Whoops, made a mistake: edit cost of transaction
+	function editTrans (id, owedAmt) {
+		var index = findIndex(id); //helper
+		this.valSpent[index] = owedAmt;
+	}
+
+	// Whoops, delete transaction info
+	function removeTrans (id) {
+		var index = findIndex(id); //helper
+		this.transactionIds.splice(index, 1);
+		this.valSpent.splice(index, 1);
+	}
+
+
+	/* Type: Getters
+	*/
+	// Get total money
 	function itsPayDay(){
+		var i;
+		var totalspent = 0;
+		for (i = 0; i < this.valSpent.length; i++) {
+  			totalspent += cars[i];
+		}
 		return totalspent;
 	}
 
-	/*
-
+	/* TODO:
+	Collapse "details" button to display costs for each transaction
+	
+	function getOwedDetails(){
+		var text;
+		var i;
+		for (i = 0; i < this.valSpent.length; i++) {
+			text += getName(this.transactionIds[i]) + " "
+				+ this.valSpent[i] + "\n";
+		}
+	}
 	*/
 }
 
 
+/* 
+Creating a class object?
 
+Is this how you do it LOL
+*/
 
 var str = "profile" + String(ppl);
 let str = new Profile(user_input); //USER INPUT
@@ -69,5 +111,5 @@ var randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter",
 					"Creme", "Brulee", "Milk", "Earl", 
 					"Gray", "Kuro", "Sugar", "Buddha",
 					"Latte", "Ichigo", "Sakura", "Shiba",
-					"Corgi", "Bogi"
+					"Corgi", "Bogi", "Matcha"
 					];

@@ -46,6 +46,22 @@ Notes:
 - Amount the person owes the group is deducted
 - transactionIds: always 888 for when person pays bill
 
+#### editTrans (id, owedAmt) 
+Whoops, made a mistake: edit cost of transaction
+
+*Parameters* : None
+
+*Return* : changed cost value stored at matching index of valSpent[]
+
+#### removeTrans (id)
+
+Whoops, delete transaction info
+
+*Return* :
+- remove vals from transactionIds[]
+- and valSpent[]
+
+
 #### Class Methods: Getter Type
 ##### itsPayDay()
 Get total money

@@ -9,10 +9,53 @@
     <h1> Boba Bill </h1>
     <p> Splitting the bill with friends, simplified</p>
 
-    <h2> Create a Profile </h2>
-    <p> Who&apos;s in your party? </p>
+    <h2> Profiles </h2>
+    <p> Add your friends to the party </p>
 
+    <!-- does this come before or after the html forms? -->
     <script src="js/profiles.js"></script>
+
+    <!-- want to make this available as many times 
+      as the user clicks the submit button, "Add" --> 
+    <!-- <form action="/action_page.php">  ???-->
+    <form>
+      <!-- Adding Profiles -->
+      Name:<br>
+      <input type="text" name="firstname"><br>
+      <input type="submit" value="Add friend">
+
+      <!-- TODO: want to reload this form every time a new friend profile is successfully added. also want the previously added friends to be displayed -->
+
+      <!-- maybe adding friends form is a drop-down window? otherwise how do we stop adding friends and move on to transaction info? -->
+
+      <!-- TODO: select one of several available icons as a profile picture -->
+    
+    </form>
+    
+    <h2> Transactions </h2>
+    <form>
+
+      <!-- Add Transaction -->
+       Business name:<br>
+      <input type="text" name="business"><br>
+      Amount spent:<br>
+      <input type="number" name = "amtSpent"><br>
+
+      <!--TODO:
+        How do you display radio/check boxes for all the profiles created in part 1? Necessary for this form bc the user will select between whom the bill is split-->
+      Paid by:<br>
+      <input type="radio" name="payer" value="" checked>
+      <input type="radio" name="payer" value=""> 
+      <!--TODO: checkboxes select ZERO or more options
+        We want ONE or more -->
+
+      Split between:<br>
+      <input type="checkbox" name= "" value ="">
+      
+    </form> 
+
+
+    
 
   </body>
 </html>

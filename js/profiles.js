@@ -111,5 +111,6 @@ var randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter",
 					"Creme", "Brulee", "Milk", "Earl", 
 					"Gray", "Kuro", "Sugar", "Buddha",
 					"Latte", "Ichigo", "Sakura", "Shiba",
-					"Corgi", "Bogi", "Matcha"
+					"Corgi", "Bogi", "Matcha", "Pudding",
+					"Verde", "Ume"
 					];

@@ -15,7 +15,7 @@ class Transaction {
 
 	/* Transaction variables
 
-	id
+	id -> index, so no need for the variable
 	businessname
 
 
@@ -30,7 +30,9 @@ class Transaction {
 
 		// write script/function to fill in this array
 		this.pplid = [];
-		this.ppldebt = [];
+		this.status = [];
+
+		this.payer = [];
 	}
 
 	/* TODO: Another constructor for transaction id 888
@@ -43,13 +45,5 @@ class Transaction {
 	}
 	
 	*/
-
-	// Calculates amount individual owes for a single 
-	// 	transaction. (This is an even split)
-	function calcOwed(id){
-
-	} 
-
-	// TODO: Requires a corresponding update of debts on each profile 
 
 }

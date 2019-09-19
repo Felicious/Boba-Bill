@@ -1,5 +1,9 @@
 ppl = 0;
-transactioncount = 0; //how to max at 500?
+
+let allprofiles = []; // global array of profile objs
+
+//do i set this here or in the Transaction class?
+// transactioncount = 0; //how to max at 500?
 
 // helper function: find index of id
 	function findIndex(id) {
@@ -22,11 +26,13 @@ transactioncount = 0; //how to max at 500?
 
 class Profile {
 
-	//do i need unique id ...?
 	constructor(name) {
 		this.id = ppl; //global var
-		this.firstName = name;
+		// when to increment ppl? 
+		// should be after the profile object is successfully created,
+		// so maybe in main?
 
+		this.firstName = name;
   		this.transactionIds = [];
   		this.valSpent = [];
   		

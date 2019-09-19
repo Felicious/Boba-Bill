@@ -68,7 +68,7 @@ Get total money
 
 *Return*: total amount person owed
 
-##### function getOwedDetails()
+##### getOwedDetails()
 Collapse "details" button to display costs for each transaction
 
 *Returns*: 
@@ -78,7 +78,38 @@ Collapse "details" button to display costs for each transaction
 TODO: Requires additional getName function from Transaction class
 
 
-### 2. Add Transaction function 
+### 2. Transactions
+Class variables:
+
+- id: unique, based on global (might be unnecessary, bc its the same as the index of global Transaction array)
+- businessname (the rest of the var are from HTML form)
+- cost: total amount spent on transaction
+- payer[]: profile id of the ppl who paid (enables split bill option yet)
+- pplid[]: array of profile ids for the ppl splitting the transaction
+- participation[]: status to see if the bill is split evenly or not. Zero indicates that the person is splitting evenly with everyone else that's has a status of 0. Nonzero value indicates that the person is solely responsible for paying that value.
+
+#### Calculation type Class Methods
+Arguably the most important functions!
+
+##### calcOwed
+Calculates amount individual owes for a single transaction.
+
+*Parameters*: 
+- person ID
+- ID of the transaction
+
+Used by the following function
+
+##### calcOwedTotal
+Calculates amount one person owed for all transactions
+
+*Parameter*: person ID
+
+
+TODO: Requires a corresponding update of debts on each profile 
+
+
+
     This is a multi-step query from the user.
     Step 1: Total spent
         Details: requires profile (checkbox selection) of person who paid (divided between the num of ppl checked, so account for split bills)

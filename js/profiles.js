@@ -87,18 +87,7 @@ class Profile {
 		return totalspent;
 	}
 
-	/* TODO:
-	Collapse "details" button to display costs for each transaction
 	
-	function getOwedDetails(){
-		var text;
-		var i;
-		for (i = 0; i < this.valSpent.length; i++) {
-			text += getName(this.transactionIds[i]) + " "
-				+ this.valSpent[i] + "\n";
-		}
-	}
-	*/
 }
 
 

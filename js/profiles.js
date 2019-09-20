@@ -1,15 +1,11 @@
-ppl = 0;
+import transactions from './transactions.js';
 
-let allprofiles = []; // global array of profile objs
-
-//do i set this here or in the Transaction class?
-// transactioncount = 0; //how to max at 500?
+// let allprofiles = []; // global array of profile objs
 
 // helper function: find index of id
 	function findIndex(id) {
-		var i;
-		for (i = 0; i < this.transactionIds.length; i++) {
-			if (this.transactionIds[i] == id)
+		for (let i = 0; i < this.transactionIds.length; i++) {
+			if (this.transactionIds[i] === id)
 				return i;
 		}
 		// what happens when it can't find the index?
@@ -79,9 +75,8 @@ class Profile {
 	*/
 	// Get total money
 	function itsPayDay(){
-		var i;
-		var totalspent = 0;
-		for (i = 0; i < this.valSpent.length; i++) {
+		let totalspent = 0;
+		for (let i = 0; i < this.valSpent.length; i++) {
   			totalspent += cars[i];
 		}
 		return totalspent;
@@ -102,7 +97,7 @@ let str = new Profile(user_input); //USER INPUT
 ppl += 1;
 
 //random names used for when the user leaves name empty
-var randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter",
+let randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter",
 					"Creme", "Brulee", "Milk", "Earl", 
 					"Gray", "Kuro", "Sugar", "Buddha",
 					"Latte", "Ichigo", "Sakura", "Shiba",

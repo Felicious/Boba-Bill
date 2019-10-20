@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<!--TODO: add css here!-->
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -24,8 +27,9 @@
       <!-- <form action="/action_page.php">  ???-->
       <form>
         <!-- Adding Profiles -->
-        Name:<br>
-        <input type="text" name="firstname"><br>
+
+        <label for="name">Name</label>
+        <input type="text" name="name" maxlength="15">
         <button onclick= "add_Friend();">Add Friend</button>
 
         <!-- TODO: want to reload this form every time a new friend profile is successfully added. also want the previously added friends to be displayed -->
@@ -44,20 +48,21 @@
       <form>
 
         <!-- Add Transaction -->
-        Business name:<br>
-        <input type="text" name="business"><br>
-        Amount spent:<br>
-        <input type="number" name = "amtSpent"><br>
+        <label for="business">Business name</label>
+        <input type="text" name="business" maxlength="30" required>
+        <label for="amtSpent">Amount spent</label>
+        <input type="number" name = "amtSpent" min="0">
 
         <!--TODO:
           How do you display radio/check boxes for all the profiles created in part 1? Necessary for this form bc the user will select between whom the bill is split-->
-        Paid by:<br>
+        <label for="payer">Paid by</label>
+        <!--TODO: write JS to generate html so that the profile names are radio options-->
         <input type="radio" name="payer" value="" checked>
         <input type="radio" name="payer" value=""> 
         <!--TODO: checkboxes select ZERO or more options
           We want ONE or more -->
 
-        Split between:<br>
+        <label for ="">Split between</label>
         <input type="checkbox" name= "" value ="">
         
       </form> 

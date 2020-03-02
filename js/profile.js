@@ -9,6 +9,7 @@ import transactions from './transactions.js';
 				return i;
 		}
 		// what happens when it can't find the index?
+		console.log("Cannot find index");
 	}
 
 /* One question:
@@ -46,26 +47,26 @@ class Profile {
 	*/
 	
 	// Adding Transaction Id and amount owed
-	function addTransaction(id, owedAmt) {
+	addTransaction(id, owedAmt) {
 		this.transactionIds.push(id);
 		this.valSpent.push(owedAmt);
 	}
 
 	// Add transaction info for when person pays.
-	function paidBill (paidAmt) {
+	paidBill (paidAmt) {
 		this.transactionIds.push(888);
 		this.valSpent.push(paidAmt); 
 	}
 
 	// Whoops, made a mistake: edit cost of transaction
-	function editTrans (id, owedAmt) {
-		var index = findIndex(id); //helper
+	editTrans (id, owedAmt) {
+		const index = findIndex(id); //helper
 		this.valSpent[index] = owedAmt;
 	}
 
 	// Whoops, delete transaction info
-	function removeTrans (id) {
-		var index = findIndex(id); //helper
+	removeTrans (id) {
+		const index = findIndex(id); //helper
 		this.transactionIds.splice(index, 1);
 		this.valSpent.splice(index, 1);
 	}
@@ -74,16 +75,27 @@ class Profile {
 	/* Type: Getters
 	*/
 	// Get total money
-	function itsPayDay(){
+	itsPayDay(){
+		/*
+		C++ way:
 		let totalspent = 0;
 		for (let i = 0; i < this.valSpent.length; i++) {
-  			totalspent += cars[i];
+  			totalspent += valspent[i];
 		}
 		return totalspent;
+		
+		Functional:
+		*/
+
+		return this.valSpent.reduce(
+			(totalSpent, i) => totalSpent + i, 0);
+
 	}
 
 	
 }
+
+export {Profile};
 
 
 /* 
@@ -92,7 +104,7 @@ Creating a class object?
 Is this how you do it LOL
 */
 
-var str = "profile" + String(ppl);
+// var str = "profile" + String(ppl);
 let str = new Profile(user_input); //USER INPUT
 ppl += 1;
 

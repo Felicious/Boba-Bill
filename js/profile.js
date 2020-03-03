@@ -1,4 +1,3 @@
-import transactions from './transactions.js';
 
 // let allprofiles = []; // global array of profile objs
 
@@ -21,18 +20,17 @@ import transactions from './transactions.js';
 		successfully created
 */
 
-class Profile {
+import class Profile {
 
-	constructor(name) {
-		this.id = ppl; //global var
-		// when to increment ppl? 
-		// should be after the profile object is successfully created,
-		// so maybe in main?
-
+	constructor(name, id) {
+		this.id = id;
 		this.firstName = name;
   		this.transactionIds = [];
-  		this.valSpent = [];
-  		
+		this.valSpent = [];
+		
+		console.log(`New Profile for ${firstName} with ID # ${id} created.`);
+
+		ppl += 1; //global variable
 	}
 
 	/* Profile variables
@@ -92,7 +90,8 @@ class Profile {
 
 	}
 
-	
+	// TODO: getOwedDetails()
+
 
 	
 }
@@ -109,7 +108,7 @@ Is this how you do it LOL
 // var str = "profile" + String(ppl);
 let str = new Profile(user_input); //USER INPUT
 ppl += 1;
-
+/*
 //random names used for when the user leaves name empty
 let randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter",
 					"Creme", "Brulee", "Milk", "Earl", 
@@ -118,3 +117,4 @@ let randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter",
 					"Corgi", "Bogi", "Matcha", "Pudding",
 					"Verde", "Ume"
 					];
+					*/

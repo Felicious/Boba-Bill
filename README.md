@@ -138,4 +138,14 @@ TODO: Requires a corresponding update of debts on each profile
     -Apple/Google/Samsung Pay
     -Other kinds of electronic currency
 
-    And the app will figure out who can pay who what amount. (Not sure about this part as the app will prob have insufficient information to figure out the entire paying back situation. Might be sufficient to figure out how much 1 person owes to "the group" and how much 1 person needs to get paid back by "the group".) 
+    And the app will figure out who can pay who what amount. (Not sure about this part as the app will prob have insufficient information to figure out the entire paying back situation. Might be sufficient to figure out how much 1 person owes to "the group" and how much 1 person needs to get paid back by "the group".)
+
+## Error Messages
+
+### SyntaxError: Cannot use import statement outside a module
+
+    For line 1 of main.js,
+    ```javascript
+    import {Profile} from './profile.js';
+    ```
+    is apparently problematic. 

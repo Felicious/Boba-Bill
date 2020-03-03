@@ -1,9 +1,9 @@
-//these are global variables, only read them, don't change them
-import {ppl, allprofiles, transcount, alltransactions} from './calculations,js';
+//these are global variables, CAN I PLEASE MAKE CHANGES TO THEM??
+import {allprofiles, transcount, alltransactions} from './calculations,js';
 
 class Transaction {
 	
-	constructor() {
+	/* constructor() {
 
 		// when to increment global var?
 
@@ -16,6 +16,24 @@ class Transaction {
 		this.status = [];
 
 		this.payer = [];
+
+		transcount +=1;
+	}
+	*/
+
+	//test constructor
+
+	constructor(business, cost, id, status, payer){
+		this.businessname = business;
+		this.cost = cost;
+
+		//the following are arrays
+		this.pplId = id;
+		// dont know what this does rn
+		// this.status = status;
+		this.payer = payer;
+
+		transcount += 1;
 	}
 
 	/* TODO: Another constructor for transaction id 888

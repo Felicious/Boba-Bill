@@ -1,7 +1,7 @@
 //these are global variables, CAN I PLEASE MAKE CHANGES TO THEM??
 import {allprofiles, transcount, alltransactions} from './calculations,js';
 
-class Transaction {
+export class Transaction {
 	
 	/* constructor() {
 

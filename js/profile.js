@@ -20,7 +20,7 @@
 		successfully created
 */
 
-import class Profile {
+export class Profile {
 
 	constructor(name, id) {
 		this.id = id;

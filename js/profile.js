@@ -96,18 +96,7 @@ export class Profile {
 	
 }
 
-export {Profile};
 
-
-/* 
-Creating a class object?
-
-Is this how you do it LOL
-*/
-
-// var str = "profile" + String(ppl);
-let str = new Profile(user_input); //USER INPUT
-ppl += 1;
 /*
 //random names used for when the user leaves name empty
 let randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter",

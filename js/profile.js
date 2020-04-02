@@ -22,15 +22,13 @@
 
 export class Profile {
 
-	constructor(name, id) {
-		this.id = id;
+	constructor(name) {
 		this.firstName = name;
   		this.transactionIds = [];
 		this.valSpent = [];
 		
-		console.log(`New Profile for ${firstName} with ID # ${id} created.`);
+		console.log(`New Profile for ${this.firstName} created.`);
 
-		ppl += 1; //global variable
 	}
 
 	/* Profile variables

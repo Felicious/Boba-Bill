@@ -6,10 +6,9 @@ Front-end app that calculates how much each person needs to pay when splitting t
 name, how much they owe, need to be paid (this is the result, also used to create new transactions)
 
 #### Profile Variables
-1. id: corresponds with global ppl count
-2. firstName: user input. If blank, generate random name
-3. transactionIds & valSpent: linked by index to keep track of how much spent at each transaction
-4. valSpent: pos if person paid, neg if person owes something
+1. firstName: user input. If blank, generate random name
+2. transactionIds & valSpent: linked by index to keep track of how much spent at each transaction
+3. valSpent: pos if person paid, neg if person owes something
 
 #### Class Methods: Update Type
 

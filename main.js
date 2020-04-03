@@ -1,5 +1,5 @@
 import {Profile} from './js/profile.js';
-// import {Transaction} from './transaction.js';
+import {Transaction} from './transaction.js';
 // import  {ppl, allprofiles, transcount, alltransactions, calcOwed,
    //  calcTotalOwed}  from './calculations.js';
 
@@ -11,9 +11,9 @@ let alltransactions = [];
 
 //tests
 
-let Derrick = new Profile("Derrick", ppl);
-//how to increment ppl inside the constructor?
+let Derrick = new Profile("Derrick");
 
-// let Kizuna = new Transaction("Kizuna", 12.9, [0])
+
+let Kizuna = new Transaction("Kizuna", 12.9, [0])
 
 // export {ppl, allprofiles, transcount, alltransactions};

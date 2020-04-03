@@ -27,7 +27,7 @@ export class Profile {
   		this.transactionIds = [];
 		this.valSpent = [];
 		
-		console.log(`New Profile for ${this.firstName} created.`);
+		console.log(`Profile ${this.firstName} created.`);
 
 	}
 
@@ -43,7 +43,7 @@ export class Profile {
 	*/
 	
 	// Adding Transaction Id and amount owed
-	addTransaction(id, owedAmt) {
+	addTransaction(owedAmt) {
 		this.transactionIds.push(id);
 		this.valSpent.push(owedAmt);
 	}
@@ -55,14 +55,14 @@ export class Profile {
 	}
 
 	// Whoops, made a mistake: edit cost of transaction
-	editTrans (id, owedAmt) {
+	editTrans (owedAmt) {
 		const index = findIndex(id); //helper
 		this.valSpent[index] = owedAmt;
 	}
 
 	// Whoops, delete transaction info
-	removeTrans (id) {
-		const index = findIndex(id); //helper
+	removeTrans (transactionId) {
+		const index = findIndex(transactionId); //helper
 		this.transactionIds.splice(index, 1);
 		this.valSpent.splice(index, 1);
 	}

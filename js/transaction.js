@@ -1,6 +1,3 @@
-//these are global variables, CAN I PLEASE MAKE CHANGES TO THEM??
-import {allprofiles, transcount, alltransactions} from './calculations,js';
-
 export class Transaction {
 	
 	/* constructor() {
@@ -23,8 +20,8 @@ export class Transaction {
 
 	//test constructor
 
-	constructor(business, cost, id, status, payer){
-		this.businessname = business;
+	constructor(business, cost, id, payer){
+		this.businessName = business;
 		this.cost = cost;
 
 		//the following are arrays
@@ -90,5 +87,3 @@ export class Transaction {
 	} 
 
 }
-
-export {Transaction};

@@ -14,7 +14,6 @@ export class Transaction {
 
 		this.payer = [];
 
-		transcount +=1;
 	}
 	*/
 
@@ -30,7 +29,10 @@ export class Transaction {
 		// this.status = status;
 		this.payer = payer;
 
-		transcount += 1;
+		console.log(`Transaction of $${this.cost} at ${this.businessName}
+			completed by ${this.payer}`);
+
+		//TODO: update profile every time a transaction is created.
 	}
 
 	/* TODO: Another constructor for transaction id 888

@@ -46,6 +46,7 @@ export class Profile {
 	addTransaction(owedAmt) {
 		this.transactionIds.push(id);
 		this.valSpent.push(owedAmt);
+
 	}
 
 	// Add transaction info for when person pays.

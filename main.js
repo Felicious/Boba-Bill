@@ -1,7 +1,6 @@
 import {Profile} from './js/profile.js';
-import {Transaction} from './transaction.js';
-// import  {ppl, allprofiles, transcount, alltransactions, calcOwed,
-   //  calcTotalOwed}  from './calculations.js';
+// import {Transaction} from './js/transaction.js';
+
 
 let ppl = 0;
 let allprofiles = [];
@@ -12,8 +11,8 @@ let alltransactions = [];
 //tests
 
 let Derrick = new Profile("Derrick");
+allprofiles.push(Derrick);
 
-
-let Kizuna = new Transaction("Kizuna", 12.9, [0])
+// let Kizuna = new Transaction("Kizuna", 12.9, [0], "Derrick");
 
 // export {ppl, allprofiles, transcount, alltransactions};

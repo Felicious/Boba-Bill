@@ -25,14 +25,13 @@ export class Transaction {
 
 		//the following are arrays
 		this.pplId = id;
-		// dont know what this does rn
-		// this.status = status;
 		this.payer = payer;
 
 		console.log(`Transaction of $${this.cost} at ${this.businessName}
 			completed by ${this.payer}`);
 
 		//TODO: update profile every time a transaction is created.
+		// is this possible?
 	}
 
 	/* TODO: Another constructor for transaction id 888
@@ -49,32 +48,34 @@ export class Transaction {
 	*/
 
 	// Calculates amount person owes for a single transaction.
-	calcOwed(personId, transactionId)
-	{
-		// map to alltransactions[transactionid]
-		const currentTrans = alltransactions[transactionId];
+// wait do i need this function? lol
+calcOwed(personId, transactionId)
+{
+    // map to alltransactions[transactionid]
+    const currentTrans = allTransactions[transactionId];
 
-		let billTotal = currentTrans.cost;
-		let numOfPpl = currentTrans.pplId.length;
+    let billTotal = currentTrans.cost;
+    let numOfPpl = currentTrans.pplId.length;
 
-		// check if any1 is paying separately
-		for(let i = 0; i < currentTrans.status.length; i++){
-			
-			//see if personId wanted to pay separately
-			if (currentTrans.pplId[i] === personId){
-				return currentTrans.status[i]
-			}
-			
-			if(currentTrans.status[i] !== 0){
-				numOfPpl -= 1;
-			}
+    // check if any1 is paying separately
+    for(let i = 0; i < currentTrans.status.length; i++){
+        
+        //see if personId wanted to pay separately
+        if (currentTrans.pplId[i] === personId){
+            return currentTrans.status[i]
+        }
+        
+        if(currentTrans.status[i] !== 0){
+            numOfPpl -= 1;
+        }
 
-			// deduct amt others paying separately from total
-			billTotal -= currentTrans.status[i];
-		}
+        // deduct amt others paying separately from total
+        billTotal -= currentTrans.status[i];
+    }
 
-		return billTotal/numOfPpl;
-	}
+    return billTotal/numOfPpl;
+}
+
 
 	// Parameter: person id
 	calcTotalOwed(id){

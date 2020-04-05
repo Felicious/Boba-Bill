@@ -41,6 +41,9 @@ export class Profile {
 	Class Methods
 		Type: Update on Profile
 	*/
+
+	// find
+	
 	
 	// Adding Transaction Id and amount owed
 	addTransaction(owedAmt) {

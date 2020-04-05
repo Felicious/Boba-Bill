@@ -1,18 +1,37 @@
-import {Profile} from './js/profile.js';
-// import {Transaction} from './js/transaction.js';
+import {Transaction} from './js/transaction.js';
 
-
-let ppl = 0;
-let allprofiles = [];
- 
-let transcount = 0;
-let alltransactions = [];
+let allProfiles = [];
+let profCount = 0;
+let allTransactions = [];
+let transCount = 0;
 
 //tests
 
-let Derrick = new Profile("Derrick");
-allprofiles.push(Derrick);
+allProfiles.push("Derrick");
+profCount += 1;
 
-// let Kizuna = new Transaction("Kizuna", 12.9, [0], "Derrick");
+let Kizuna = new Transaction("Kizuna", 12.9, [0], "Derrick");
+let TPTea = new Transaction("TPTea", 4.87, [0], "Derrick");
+allTransactions.push(Kizuna);
+allTransactions.push(TPTea);
 
-// export {ppl, allprofiles, transcount, alltransactions};
+updateTransaction(firstName) {
+    // find index of Derrick from allProfiles
+
+    // build (array of) transactions that Derrick is involved in
+    for (const i = 0; i < allTransactions; i++) {
+
+    }
+
+    //check for diff and update Profile info
+    if (this.transactionIds.length == transArrLen) {
+        console.log(`No new transactions to update to ${this.firstName}`);
+    }
+    else {
+        this.transactionIds.push(transArrLast);
+        this.valSpent.push()
+    }
+}
+//test calcOwed func
+
+

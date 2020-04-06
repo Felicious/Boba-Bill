@@ -5,18 +5,6 @@ let profCount = 0;
 let allTransactions = [];
 let transCount = 0;
 
-//tests
-
-allProfiles[profCount] = "Derrick"; //saved in index 0
-profCount += 1;
-
-let Kizuna = new Transaction("Kizuna", 12.9, [0], [0]);
-let TPTea = new Transaction("TPTea", 4.87, [0], [0]);
-allTransactions[transCount] = Kizuna;
-transCount += 1;
-allTransactions[transCount] = TPTea;
-transCount += 1;
-
 // helper function: find index of id
 function findIndex(name) {
 	for (let i = 0; i < allProfiles.length; i++) {
@@ -29,13 +17,14 @@ function findIndex(name) {
 
 // helper function for calcOwed
 function calcSingleOwed(currentTransaction, id) {
-    console.log(`Calculating cost for ${currentTransaction.business}`);
+    console.log(`Calculating cost for ${currentTransaction.businessName}`);
     for (let i = 0; i < currentTransaction.pplId.length; i++){
 
         // if person participated in transaction
         if(currentTransaction.pplId[i] === id){
             // assuming transactions are split evenly
             const splitCost = currentTransaction.cost / currentTransaction.pplId.length;
+            console.log(`Split cost ${splitCost}`);
             // check if person paid
             for (let j = 0; j < currentTransaction.payer.length; j++){
                 
@@ -43,9 +32,9 @@ function calcSingleOwed(currentTransaction, id) {
                     return splitCost - (currentTransaction.cost / currentTransaction.payer.length);
                     // will return a negative value (bc other ppl owe u)
                 }
-                // if reached the end, person didn't pay for this trans
-                return splitCost
             }
+            // if reached the end, person didn't pay for this trans
+            return splitCost
 
         }
         // else, continue
@@ -71,6 +60,4 @@ function calcOwed(firstName){
     return totalOwed;
 }
 
-//test calcOwed func
-console.log(calcOwed("Derrick"));
-
+export {findIndex, calcOwed, allProfiles, allTransactions, profCount, transCount};

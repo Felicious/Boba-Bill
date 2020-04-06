@@ -16,12 +16,16 @@ export class Transaction {
 
 	}
 	*/
-
-	//test constructor
-
 	constructor(business, cost, id, payer){
 		this.businessName = business;
-		this.cost = cost;
+		
+		if(cost < 0) {
+			console.log("Cost cannot be negative.");
+			// what would i do to indicate constructor failed?
+		}
+		else{ 
+			this.cost = cost;
+		}
 
 		//the following are arrays
 		this.pplId = id;

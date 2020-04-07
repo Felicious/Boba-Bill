@@ -16,7 +16,7 @@ export class Transaction {
 
 	}
 	*/
-	constructor(business, cost, id, payer){
+	constructor(business, cost, id, status, payer){
 		this.businessName = business;
 		
 		if(cost < 0) {
@@ -29,6 +29,7 @@ export class Transaction {
 
 		//the following are arrays
 		this.pplId = id;
+		this.status = status;
 		this.payer = payer;
 
 		console.log(`Transaction of $${this.cost} at ${this.businessName}

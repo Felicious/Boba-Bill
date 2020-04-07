@@ -1,15 +1,17 @@
-import {findIndex, calcOwed, allProfiles, allTransactions, profCount, transCount}
+import {calcOwed, allProfiles, allTransactions}
     from '../main.js';
 import {Transaction} from '../js/transaction.js';
 
+let profCount = 0;
+let transCount = 0;
 // testing calcOwed function, focusing on evenly splitting bill
     // among the participants
 
 allProfiles[profCount] = "Johnny"; //saved in index 0
 profCount += 1;
 
-let InAndOut = new Transaction("In&Out", 12.9, [0], [0]);
-let Teaspoon = new Transaction("Teaspoon", 4.50, [0], [0]);
+let InAndOut = new Transaction("In&Out", 12.9, [0], [0], [0]);
+let Teaspoon = new Transaction("Teaspoon", 4.50, [0], [0,], [0]);
 allTransactions[transCount] = InAndOut;
 transCount += 1;
 allTransactions[transCount] = Teaspoon;
@@ -23,15 +25,15 @@ profCount += 1;
 allProfiles[profCount] = "Felicia";
 profCount += 1;
 
-allTransactions[transCount] = new Transaction("CurryHouse", 28.6, [1, 2], [1]);
+allTransactions[transCount] = new Transaction("CurryHouse", 28.6, [1, 2], [0,0], [1]);
 transCount += 1;
-allTransactions[transCount] = new Transaction("MatchaLove", 8, [1,2], [1]);
+allTransactions[transCount] = new Transaction("MatchaLove", 8, [1,2], [0,0], [1]);
 transCount += 1;
 
 console.log(`Derrick: ${calcOwed("Derrick")} and Felicia:  ${calcOwed("Felicia")}
     should be the same except Derrick's is neg and mine is postitive.`); // values should be equal
 
-allTransactions[transCount] = new Transaction("PeakDesign", 200, [0, 1], [1]);
+allTransactions[transCount] = new Transaction("PeakDesign", 200, [0, 1], [0,0], [1]);
 transCount += 1;
 
 console.log(`Felicia didn't participate in previous transaction

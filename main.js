@@ -1,7 +1,6 @@
 import {Transaction} from './js/transaction.js';
 
 let allProfiles = [];
-let profCount = 0;
 let allTransactions = [];
 let transCount = 0;
 
@@ -48,7 +47,6 @@ function calcOwed(firstName){
     
     // find ID of person from Profile
     const idFromProfile = findIndex(firstName);
-    console.log(`Derrick's ID is ${idFromProfile}`)
     
     // parse every transaction in allTrans to total each expenditure
     // Q: should i save it as an object or not?
@@ -60,4 +58,4 @@ function calcOwed(firstName){
     return totalOwed;
 }
 
-export {findIndex, calcOwed, allProfiles, allTransactions, profCount, transCount};
+export {calcOwed, allProfiles, allTransactions};

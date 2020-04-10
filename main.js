@@ -94,7 +94,7 @@ function calcOwed(firstName){
         }
         else
         {
-            
+            totalOwed += calcSingleOwed(allTransactions[i], idFromProfile);
         }
         
     }

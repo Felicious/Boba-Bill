@@ -52,49 +52,6 @@ export class Transaction {
 	
 	*/
 
-	// Calculates amount person owes for a single transaction.
-// wait do i need this function? lol
-calcOwed(personId, transactionId)
-{
-    // map to alltransactions[transactionid]
-    const currentTrans = allTransactions[transactionId];
 
-    let billTotal = currentTrans.cost;
-    let numOfPpl = currentTrans.pplId.length;
-
-    // check if any1 is paying separately
-    for(let i = 0; i < currentTrans.status.length; i++){
-        
-        //see if personId wanted to pay separately
-        if (currentTrans.pplId[i] === personId){
-            return currentTrans.status[i]
-        }
-        
-        if(currentTrans.status[i] !== 0){
-            numOfPpl -= 1;
-        }
-
-        // deduct amt others paying separately from total
-        billTotal -= currentTrans.status[i];
-    }
-
-    return billTotal/numOfPpl;
-}
-
-
-	// Parameter: person id
-	calcTotalOwed(id){
-		// allprofiles[id].transactionIds[i] // gives transaction ID
-
-		let totalOwed = 0;
-		for (let i = 0; i < allprofiles[id].transactionIds.length; i++){
-			totalOwed += calcOwed(id, allprofiles[id].transactionIds[i])
-		}
-		
-		return calcTotalOwed;
-	} 
 
 }
-
-
-

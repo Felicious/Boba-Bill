@@ -1,8 +1,28 @@
 import {Transaction, calcSingleOwed, calcSplitOwed} from './js/transaction.js';
 
 let allProfiles = [];
+let profCount = 0;
 let allTransactions = [];
 let transCount = 0;
+
+function add_Friend()
+{
+    const friend = document.getElementById("fname");
+    allProfiles[profCount] = friend;
+    profCount += 1;
+
+    // document.getElementsByTagName("P").item(2) 
+	// returns the paragraph node "Add your friends to the party"
+    const header = document.getElementsByTagName("P").item(2);
+    
+    // create new text node for the next friend
+    const addFriendName = document.createElement("P");
+    addFriendName.appendChild(friend);
+
+    //put the text at the end of the text "Add ur friends to pty"
+    header.parentNode.appendChild(addFriendName);
+
+}
 
 // helper function: find index of id
 function findIndex(name) {

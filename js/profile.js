@@ -1,3 +1,12 @@
+function add_Friend()
+{
+	// document.getElementsByTagName("P").item(2) 
+	// returns the paragraph node "Add your friends to the party"
+
+	const friend = document.getElementById("fname");
+
+
+}
 
 /* One question:
    if the user clicks on the button (which

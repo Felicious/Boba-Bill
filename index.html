@@ -17,7 +17,19 @@
     <h2> Profiles </h2>
     <p> Add your friends to the party </p>
 
-    <section class = "profiles">
+    
+
+    <form>
+
+      <label for="name">Name</label>
+      <input type="text" name="fname" maxlength="15">
+      <button onclick= "add_Friend();">Add Friend</button>
+      
+      <!-- TODO: add prof pic-->
+    
+    </form>
+
+    
 
       <!-- does this come before or after the html forms? -->
       <script type="module" src="test/calcSplit.js"></script>
@@ -25,20 +37,17 @@
       <!-- want to make this available as many times 
         as the user clicks the submit button, "Add" --> 
       <!-- <form action="/action_page.php">  ???-->
-      <form>
-        <!-- Adding Profiles -->
+      
+      <!--
+      
 
-        <label for="name">Name</label>
-        <input type="text" name="name" maxlength="15">
-        <button onclick= "add_Friend();">Add Friend</button>
+    -->
 
-        <!-- TODO: want to reload this form every time a new friend profile is successfully added. also want the previously added friends to be displayed -->
+    <!-- TODO: want to reload this form every time a new friend profile is successfully added. also want the previously added friends to be displayed -->
 
         <!-- maybe adding friends form is a drop-down window? otherwise how do we stop adding friends and move on to transaction info? -->
 
         <!-- TODO: select one of several available icons as a profile picture -->
-      
-      </form>
     </section>
     
     <hr>

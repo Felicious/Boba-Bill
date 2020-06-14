@@ -66,4 +66,9 @@ function calcOwed(firstName){
     return totalOwed;
 }
 
-export {calcOwed, allProfiles, allTransactions};
+
+// event listeners
+const button = document.querySelector('button');
+button.addEventListener('click', add_Friend);
+
+// export {calcOwed, allProfiles, allTransactions};

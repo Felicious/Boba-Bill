@@ -8,6 +8,7 @@ let transCount = 0;
 function add_Friend()
 {
     const friend = document.getElementById("fname");
+    console.log(friend);
     allProfiles[profCount] = friend;
     profCount += 1;
 

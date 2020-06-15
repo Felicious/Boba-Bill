@@ -68,7 +68,9 @@ function calcOwed(firstName){
 
 
 // event listeners
-const button = document.querySelector('button');
-button.addEventListener('click', add_Friend);
+const addFriend = document.getElementById('addFriend');
+addFriend.addEventListener('click', add_Friend);
+
+//const addTransaction = 
 
 // export {calcOwed, allProfiles, allTransactions};

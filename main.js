@@ -17,8 +17,9 @@ function add_Friend()
     const header = document.getElementsByTagName("P").item(2);
     
     // create new text node for the next friend
-    const addFriendName = document.createElement("P");
-    addFriendName.appendChild(friend);
+    const addFriendName = document.createTextNode(friend);
+    const newElement = document.createElement("P");
+    newElement.appendChild(addFriendName);
 
     //put the text at the end of the text "Add ur friends to pty"
     header.parentNode.appendChild(addFriendName);

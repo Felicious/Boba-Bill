@@ -23,7 +23,7 @@
 
       <label for="name">Name</label>
       <input type="text" name="fname" maxlength="15">
-      <button id="addFriend" type="button">Add</button>
+      <button id="addFriend" type="button">Add Friend</button>
       
       <!-- TODO: add prof pic-->
     
@@ -52,29 +52,31 @@
     <hr>
 
     <h2>Transactions</h2>
-    <section class ="transactions">
-      <form>
+    
+    <form>
 
-        <!-- Add Transaction -->
-        <label for="business">Business name</label>
-        <input type="text" name="business" maxlength="30" required>
-        <label for="amtSpent">Amount spent</label>
-        <input type="number" name="amtSpent" min="0">
+      <!-- Add Transaction -->
+      <label for="business">Business name</label>
+      <input type="text" name="business" maxlength="30" required>
+      <label for="amtSpent">Amount spent</label>
+      <input type="number" name="amtSpent" min="0">
 
-        <!--TODO:
-          How do you display radio/check boxes for all the profiles created in part 1? Necessary for this form bc the user will select between whom the bill is split-->
-        <label for="payer">Paid by</label>
-        <!--TODO: write JS to generate html so that the profile names are radio options-->
-        <input type="radio" name="payer" value="" checked>
-        <input type="radio" name="payer" value=""> 
-        <!--TODO: checkboxes select ZERO or more options
-          We want ONE or more -->
+      <!--TODO:
+        How do you display radio/check boxes for all the profiles created in part 1? Necessary for this form bc the user will select between whom the bill is split-->
+      <label for="payer">Paid by</label>
+      <!--TODO: write JS to generate html so that the profile names are radio options-->
+      <input type="radio" name="payer" value="" checked>
+      <input type="radio" name="payer" value=""> 
+      <!--TODO: checkboxes select ZERO or more options
+        We want ONE or more -->
 
-        <label for ="">Split between</label>
-        <input type="checkbox" name= "" value ="">
-        
-      </form> 
-    </section>
+      <label for ="">Split between</label>
+      <input type="checkbox" name= "" value ="">
+
+      <button id="addTransaction" type="button">Add Transaction</button>
+      
+    </form> 
+    
 
 
     <!-- TODO: Viewing previous transactions and possibly editing them--> 
@@ -84,6 +86,8 @@
 
     <!--- Todo: allowing ppl to pay each other/ add payment methods?-->
     <h2> Paying each other </h2>
+
+    <script type="module" src="./main.js"></script>
 
   </body>
 </html>

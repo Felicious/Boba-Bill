@@ -151,4 +151,5 @@ TODO: Requires a corresponding update of debts on each profile
 
 ## References
 Mozilla is the best hehe :)
-[Basic Form Styling](https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form) 
+- [Basic Form Styling](https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form)
+- Displaying [friend names](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Using_the_W3C_DOM_Level_1_Core) after the user adds them

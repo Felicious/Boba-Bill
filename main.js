@@ -15,7 +15,7 @@ function add_Friend()
 
     // document.getElementsByTagName("P").item(2) 
 	// returns the paragraph node "Add your friends to the party"
-    const header = document.getElementsByTagName("P").item(2);
+    const para = document.getElementsByTagName("P").item(2);
     
     // create new text node for the next friend
     const addFriendName = document.createTextNode(friend);
@@ -23,7 +23,7 @@ function add_Friend()
     newElement.appendChild(addFriendName);
 
     //put the text at the end of the text "Add ur friends to pty"
-    header.parentNode.appendChild(addFriendName);
+    para.parentNode.appendChild(addFriendName);
 
 }
 

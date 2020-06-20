@@ -12,10 +12,11 @@ function add_Friend()
     console.log(friend);
     allProfiles[profCount] = friend;
     profCount += 1;
-
-    // document.getElementsByTagName("P").item(2) 
+ 
 	// returns the paragraph node "Add your friends to the party"
-    const para = document.getElementsByTagName("P").item(2);
+    const header = document.getElementById("profile list");
+    const para = header.firstChild;
+    console.log(para);
     
     // create new text node for the next friend
     const addFriendName = document.createTextNode(friend);
@@ -23,7 +24,7 @@ function add_Friend()
     newElement.appendChild(addFriendName);
 
     //put the text at the end of the text "Add ur friends to pty"
-    para.parentNode.appendChild(addFriendName);
+    //para.parentNode.appendChild(newElement);
 
 }
 

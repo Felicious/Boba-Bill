@@ -147,7 +147,11 @@ TODO: Requires a corresponding update of debts on each profile
     ```javascript
     import {Profile} from './profile.js';
     ```
-    is apparently problematic. 
+    is apparently problematic.
+
+To fix this, add a *type* with the value "module" to script.
+    ``` html
+    <script type="module" src="./main.js"></script> ```
 
 ## References
 Mozilla is the best hehe :)

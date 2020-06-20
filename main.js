@@ -1,11 +1,12 @@
 import {Transaction, calcSingleOwed, calcSplitOwed} from './js/transaction.js';
+import {displayName} from './js/profile.js';
 
 let allProfiles = [];
 let profCount = 0;
 let allTransactions = [];
 let transCount = 0;
 
-function add_Friend()
+function addFriend()
 {
     const friend = document.getElementById("fname").value;
 
@@ -13,20 +14,8 @@ function add_Friend()
     allProfiles[profCount] = friend;
     profCount += 1;
  
-    // returns the paragraph node "Add your friends to the party"
-    // after using id of its parent node, the div profile-list
-    const header = document.getElementById("profile-list");
-    const para = header.firstChild;
-    console.log(para);
-    
-    // create new text node for the next friend
-    const addFriendName = document.createTextNode(friend);
-    const newElement = document.createElement("P");
-    newElement.appendChild(addFriendName);
-
-    //put the text at the end of the text "Add ur friends to pty"
-    //para.parentNode.appendChild(newElement);
-
+    // helper function
+    displayName(friend);
 }
 
 // helper function: find index of id
@@ -74,7 +63,7 @@ function calcOwed(firstName){
 
 // event listeners
 const addFriend = document.getElementById('addFriend');
-addFriend.addEventListener('click', add_Friend);
+addFriend.addEventListener('click', addFriend);
 
 //const addTransaction = 
 

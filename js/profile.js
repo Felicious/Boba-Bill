@@ -1,4 +1,22 @@
+/* 	helper function that changes HTML elements
+	to display newly added name on top of the form */
+function displayFriend(friend)
+{
+	// returns the div node, the parent node of the paragraph node
+	// "Add friend to party"
+	const divider = document.getElementById("profile-list");
 
+	// create new text node for the next friend
+	const addFriendName = document.createTextNode(friend);
+	const newElement = document.createElement("P");
+	newElement.appendChild(addFriendName);
+
+	// put the text inside the div
+	divider.appendChild(newElement);
+
+	// clear the input after name is entered
+	document.getElementById("fname").value = "";
+}
 
 /* One question:
    if the user clicks on the button (which
@@ -19,3 +37,5 @@ let randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter",
 					"Verde", "Ume"
 					];
 					*/
+
+export {displayFriend};

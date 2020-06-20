@@ -148,3 +148,7 @@ TODO: Requires a corresponding update of debts on each profile
     import {Profile} from './profile.js';
     ```
     is apparently problematic. 
+
+## References
+Mozilla is the best hehe :)
+[Basic Form Styling](https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form) 

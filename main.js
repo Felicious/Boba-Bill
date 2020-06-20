@@ -13,8 +13,9 @@ function add_Friend()
     allProfiles[profCount] = friend;
     profCount += 1;
  
-	// returns the paragraph node "Add your friends to the party"
-    const header = document.getElementById("profile list");
+    // returns the paragraph node "Add your friends to the party"
+    // after using id of its parent node, the div profile-list
+    const header = document.getElementById("profile-list");
     const para = header.firstChild;
     console.log(para);
     

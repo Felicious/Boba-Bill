@@ -7,9 +7,9 @@ function displayFriend(friend)
 	const divider = document.getElementById("profile-list");
 
 	// create new text node for the next friend
-	const addFriendName = document.createTextNode(friend);
-	const newElement = document.createElement("P");
-	newElement.appendChild(addFriendName);
+	const addFriendName = document.createTextNode(friend); // new text
+	const newElement = document.createElement("P"); // new paragraph type
+	newElement.appendChild(addFriendName); // adding them together 
 
 	// put the text inside the div
 	divider.appendChild(newElement);

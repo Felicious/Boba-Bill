@@ -1,5 +1,5 @@
 import {Transaction, calcSingleOwed, calcSplitOwed} from './js/transaction.js';
-import {displayName} from './js/profile.js';
+import {displayFriend} from './js/profile.js';
 
 let allProfiles = [];
 let profCount = 0;
@@ -15,7 +15,7 @@ function addFriend()
     profCount += 1;
  
     // helper function
-    displayName(friend);
+    displayFriend(friend);
 }
 
 // helper function: find index of id
@@ -62,8 +62,8 @@ function calcOwed(firstName){
 
 
 // event listeners
-const addFriend = document.getElementById('addFriend');
-addFriend.addEventListener('click', addFriend);
+const addFriendName = document.getElementById('addFriend');
+addFriendName.addEventListener('click', addFriend);
 
 //const addTransaction = 
 

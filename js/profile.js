@@ -18,6 +18,27 @@ function displayFriend(friend)
 	document.getElementById("fname").value = "";
 }
 
+//	adds friend name to the drop down menus in the Transaction sec.
+function addToDropDownMenus(friend)
+{	// create radio button to select payer
+	
+	// first, create input object
+	const radioButton = document.createElement("input");
+	radioButton.type = "radio";
+	radioButton.value = friend;
+
+	// add input object to parent, which is the div element
+	const parent = document.getElementById("select-payer");
+	parent.appendChild(radioButton);
+
+	// create check box to choose ppl to split transaction between
+	const checkBox = document.createElement("input");
+	checkBox.type = "checkbox";
+	checkBox.value = friend;
+
+	const financialProvider = document.getElementById("split");
+	financialProvider.appendChild(checkBox);
+}
 /* One question:
    if the user clicks on the button (which
 		opens the function more than once, would 
@@ -27,7 +48,6 @@ function displayFriend(friend)
 		successfully created
 */
 
-/*
 //random names used for when the user leaves name empty
 let randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter",
 					"Creme", "Brulee", "Milk", "Earl", 
@@ -36,6 +56,12 @@ let randBobaNames = ["Yuzu", "Krema", "Pearl", "Winter",
 					"Corgi", "Bogi", "Matcha", "Pudding",
 					"Verde", "Ume"
 					];
-					*/
 
-export {displayFriend};
+
+function assignName(){
+	return randBobaNames[
+		Math.ceil(Math.random()*100) % randBobaNames.length
+	];
+}
+
+export {displayFriend, addToDropDownMenus, assignName};

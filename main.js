@@ -1,22 +1,10 @@
 import {Transaction, calcSingleOwed, calcSplitOwed} from './js/transaction.js';
-import {displayFriend} from './js/profile.js';
+import {displayFriend, addToDropDownMenus, assignName} from './js/profile.js';
 
 let allProfiles = [];
 let profCount = 0;
 let allTransactions = [];
 let transCount = 0;
-
-function addFriend()
-{
-    const friend = document.getElementById("fname").value;
-
-    console.log(friend);
-    allProfiles[profCount] = friend;
-    profCount += 1;
- 
-    // helper function
-    displayFriend(friend);
-}
 
 // helper function: find index of id
 function findIndex(name) {
@@ -24,8 +12,40 @@ function findIndex(name) {
 		if (allProfiles[i] === name)
 			return i;
 	}
-	// what happens when it can't find the index?
-	console.log(`Requested name not found. Make a profile for ${name}?`);
+    // what happens when it can't find the index?
+    // how to cancel?
+    console.log(`Requested name not found. Make a profile for ${name}?`);
+    return -1; 
+}
+
+function addFriend()
+{
+    // get friend name from saved value of the form
+    const friend = document.getElementById("fname").value;
+
+    // check empty
+    if(friend === ""){
+        friend = assignName();
+        console.log(`You left the name empty. The random name ${friend} is assigned for you :D`)
+    }
+    else if(findIndex(friend) > -1){ // yes theres a dup
+        // how to write alert?
+        window.alert("Friend has already been added!")
+
+        // TODO: STOP THE FUNCTION HERE
+    }
+    else {
+
+        allProfiles[profCount] = friend;
+        profCount += 1;
+    
+        // show added friend on page
+        displayFriend(friend);
+
+        // add friend option to radio buttons
+        addToDropDownMenus(friend);
+
+    }
 }
 
 

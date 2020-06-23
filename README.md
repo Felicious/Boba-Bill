@@ -155,6 +155,10 @@ To fix this, add a *type* with the value "module" to script.
 
 ## References
 Mozilla is the best hehe :)
+*HTML Elements and Inheritance Structure*
 - [Basic Form Styling](https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form)
 - How to do [event listeners](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event)
 - Displaying [friend names](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Using_the_W3C_DOM_Level_1_Core) after the user adds them
+- Understanding Parent Nodes Object structure and Child Elements
+- Use [Node.appendChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+- Useful function to index child nodes: [firstChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild)

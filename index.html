@@ -31,19 +31,6 @@
     
     </form>
 
-    
-
-      <!-- does this come before or after the html forms? -->
-
-      <!-- want to make this available as many times 
-        as the user clicks the submit button, "Add" --> 
-      <!-- <form action="/action_page.php">  ???-->
-      
-      <!--
-      
-
-    -->
-
     <!-- TODO: want to reload this form every time a new friend profile is successfully added. also want the previously added friends to be displayed -->
 
         <!-- maybe adding friends form is a drop-down window? otherwise how do we stop adding friends and move on to transaction info? -->
@@ -65,15 +52,22 @@
 
       <!--TODO:
         How do you display radio/check boxes for all the profiles created in part 1? Necessary for this form bc the user will select between whom the bill is split-->
-      <label for="payer">Paid by</label>
-      <!--TODO: write JS to generate html so that the profile names are radio options-->
-      <input type="radio" name="payer" value="" checked>
-      <input type="radio" name="payer" value=""> 
+      <div id="select-payer">
+        <label for="payer">Paid by</label>
+
+        <!--TODO: write JS to generate html so that the profile names are radio options-->
+
+      </div>
+      
+      
       <!--TODO: checkboxes select ZERO or more options
         We want ONE or more -->
 
-      <label for ="">Split between</label>
-      <input type="checkbox" name= "" value ="">
+      <div id="split">
+        <label for ="">Split between</label>
+        <input type="checkbox" name= "" value ="">
+
+      </div>
 
       <button id="addTransaction" type="button">Add Transaction</button>
       

@@ -46,26 +46,27 @@
 
       <!-- Add Transaction -->
       <label for="business">Business name</label>
-      <input type="text" name="business" maxlength="30" required>
+      <input type="text" name="business" maxlength="30" required> <br>
       <label for="amtSpent">Amount spent</label>
-      <input type="number" name="amtSpent" min="0">
+      <input type="number" name="amtSpent" min="0" required>
 
       <!--TODO:
         How do you display radio/check boxes for all the profiles created in part 1? Necessary for this form bc the user will select between whom the bill is split-->
       <div id="select-payer">
-        <label for="payer">Paid by</label>
+        <label for="payer">Paid by</label><br>
 
-        <!--TODO: write JS to generate html so that the profile names are radio options-->
+        <!-- wrote script (displayFriend function inside profile. js)
+        that fills this part up when a new friend is added-->
 
       </div>
-      
       
       <!--TODO: checkboxes select ZERO or more options
         We want ONE or more -->
 
       <div id="split">
-        <label for ="">Split between</label>
-        <input type="checkbox" name= "" value ="">
+        <label for ="">Split between</label><br>
+        <!-- wrote script (displayFriend function inside profile. js)
+        that fills this part up when a new friend is added-->
 
       </div>
 

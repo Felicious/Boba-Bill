@@ -26,13 +26,11 @@ function addFriend()
     // check empty
     if(friend === ""){
         friend = assignName();
+        // TODO: ?? possibly add an alert?
         console.log(`You left the name empty. The random name ${friend} is assigned for you :D`)
     }
     else if(findIndex(friend) > -1){ // yes theres a dup
-        // how to write alert?
         window.alert("Friend has already been added!")
-
-        // TODO: STOP THE FUNCTION HERE
     }
     else {
 

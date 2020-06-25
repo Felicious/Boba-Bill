@@ -18,26 +18,43 @@ function displayFriend(friend)
 	document.getElementById("fname").value = "";
 }
 
-//	adds friend name to the drop down menus in the Transaction sec.
-function addToDropDownMenus(friend)
-{	// create radio button to select payer
-	
+/*	creates radio button + check boxes dynamically
+	parameters: friend name, input type (radio or check box),
+		and lastly, the div id
+		(they are all strings)
+	return: none
+*/
+function createButton(friend, buttonType, divID)
+{
 	// first, create input object
-	const radioButton = document.createElement("input");
-	radioButton.type = "radio";
-	radioButton.value = friend;
+	const button = document.createElement("input");
+	button.type = buttonType; // buttonType is either "radio" or "checkbox"
+	button.id = friend + buttonType;
 
-	// add input object to parent, which is the div element
-	const parent = document.getElementById("select-payer");
-	parent.appendChild(radioButton);
+	// then add the accompanying text to the button
+	// (otherwise it'll just be a single button LOL)
+	const label = document.createElement("label");
+	label.htmlFor = friend + buttonType;
 
-	// create check box to choose ppl to split transaction between
-	const checkBox = document.createElement("input");
-	checkBox.type = "checkbox";
-	checkBox.value = friend;
+	const textForLabel = document.createTextNode(friend);
+	label.appendChild(textForLabel);
 
-	const financialProvider = document.getElementById("split");
-	financialProvider.appendChild(checkBox);
+	const newline = document.createElement("br");
+
+	// add input object + labels to parent, which is the div element
+	const parent = document.getElementById(divID); // "select-payer" or "split"
+	parent.appendChild(button);
+	parent.appendChild(label);
+	parent.appendChild(newline);
+}
+//	adds friend name to the drop down menus in the Transaction sec. 
+function addToDropDownMenus(friend)
+{	
+	// create radio button to select payer
+	createButton(friend, "radio", "select-payer");
+
+	// create checkboxes to select which ppl to split transaction between
+	createButton(friend, "checkbox", "split");
 }
 /* One question:
    if the user clicks on the button (which

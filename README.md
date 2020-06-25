@@ -162,3 +162,4 @@ Mozilla is the best hehe :)
 - Understanding Parent Nodes Object structure and Child Elements
 - Use [Node.appendChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
 - Useful function to index child nodes: [firstChild](https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild)
+- [This](https://www.techiedelight.com/create-radio-button-dynamically-javascript/) was major help for writing my *addToDropDownMenus* function that created radio buttons/check boxes with an added friend name

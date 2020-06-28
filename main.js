@@ -18,6 +18,7 @@ function findIndex(name) {
     return -1; 
 }
 
+// profile event handler
 function addFriend()
 {
     // get friend name from saved value of the form
@@ -29,7 +30,8 @@ function addFriend()
         // TODO: ?? possibly add an alert?
         console.log(`You left the name empty. The random name ${friend} is assigned for you :D`)
     }
-    else if(findIndex(friend) > -1){ // yes theres a dup
+    
+    if(findIndex(friend) > -1){ // yes theres a dup
         window.alert("Friend has already been added!")
     }
     else {
@@ -78,6 +80,35 @@ function calcOwed(firstName){
     return totalOwed;
 }
 
+// transaction event handler
+function addTransaction()
+{
+    // get all req info from input
+    const busnName = document.getElementById('business');
+    const amtSpent = document.getElementById('amtSpent');
+    let payer;
+    let splitAmong = [];
+
+    const radios = document.getElementsByName('radio');
+    for (let i = 0; i < radios.length; i++){
+        if (radios[i].checked){
+            payer = radios[i].value;
+            break;
+        }
+    }
+    const checks = document.getElementsByName('checkbox');
+    for(let i = 0; i < checks.length; i++){
+        if (checks[i].checked){
+            splitAmong.append(checks[i]);
+        }
+    }
+
+    // put gathered info into constructor
+    Transaction(busnName, amtSpent, payer, splitAmong);
+
+
+}
+
 
 // event listeners
 
@@ -94,7 +125,7 @@ addFriendWithEnter.addEventListener('keydown', (e) => {
 });
 
 // Transactions
-
-//const addTransaction = 
+const addTransactionInfo = document.getElementById('addTransaction');
+addTransactionInfo.addEventListener('click', addTransaction);
 
 // export {calcOwed, allProfiles, allTransactions};

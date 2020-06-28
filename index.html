@@ -31,8 +31,6 @@
     
     </form>
 
-    <!-- TODO: want to reload this form every time a new friend profile is successfully added. also want the previously added friends to be displayed -->
-
         <!-- maybe adding friends form is a drop-down window? otherwise how do we stop adding friends and move on to transaction info? -->
 
         <!-- TODO: select one of several available icons as a profile picture -->
@@ -45,10 +43,10 @@
     <form>
 
       <!-- Add Transaction -->
-      <label for="business">Business name</label>
-      <input type="text" name="business" maxlength="30" required> <br>
-      <label for="amtSpent">Amount spent</label>
-      <input type="number" name="amtSpent" min="0" required>
+      <label for="business">Business name</label><br>
+      <input type="text" id="business" maxlength="30" required><br>
+      <label for="amtSpent">Amount spent</label> <br>
+      <input type="number" id="amtSpent" min="0" required>
 
       <!--TODO:
         How do you display radio/check boxes for all the profiles created in part 1? Necessary for this form bc the user will select between whom the bill is split-->

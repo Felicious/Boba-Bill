@@ -80,8 +80,20 @@ function calcOwed(firstName){
 
 
 // event listeners
+
+// Profiles
 const addFriendName = document.getElementById('addFriend');
 addFriendName.addEventListener('click', addFriend);
+
+// need an event listener on the input box to get enter to press the submit button
+const addFriendWithEnter = document.getElementById('fname');
+addFriendWithEnter.addEventListener('keydown', (e) => {
+    if (e.keyCode == 13 ){ // if the pressed key is "Enter"
+        addFriend();
+    }
+});
+
+// Transactions
 
 //const addTransaction = 
 

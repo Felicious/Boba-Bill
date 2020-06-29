@@ -31,7 +31,8 @@ function createButton(friend, buttonType, divID)
 	button.type = buttonType; // buttonType is either "radio" or "checkbox"
 	button.id = friend + buttonType;
 	button.name = buttonType; // need the name to loop thru all radios/checkboxes later
-
+	button.value = friend;
+	
 	// then add the accompanying text to the button
 	// (otherwise it'll just be a single button LOL)
 	const label = document.createElement("label");

@@ -81,8 +81,8 @@ function calcOwed(firstName){
 function addTransaction()
 {
     // get all req info from input
-    const busnName = document.getElementById('business');
-    const amtSpent = document.getElementById('amtSpent');
+    const busnName = document.getElementById('business').value;
+    const amtSpent = document.getElementById('amtSpent').value;
     let splitAmong = [];
     // TODO: status!! for now, fill it with zeros
     let status = [];
@@ -108,9 +108,10 @@ function addTransaction()
         status.push(0);
     }
 
-    
     // put gathered info into constructor
-    new Transaction(busnName, amtSpent, splitAmong, status, payer);
+    allTransactions[transCount] =
+        new Transaction(busnName, amtSpent, splitAmong, status, payer);
+    transCount += 1;
 
     // for testing purposes:
     console.log(`Business name: ${busnName}`);
@@ -118,6 +119,8 @@ function addTransaction()
     console.log(`IDs of the people involved: ${splitAmong}`);
     console.log(`Should be an even split, so ${status}`);
     console.log(`The person who paid the total amt is ${payer}`);
+
+    // Error: name saved in the global profiles is "on " not felicia
 
 
 }

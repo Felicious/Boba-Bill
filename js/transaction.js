@@ -45,8 +45,54 @@ class Transaction {
 
 	
 	
-	*/
+    */
+    
+    displayTransaction(){
+        const parent = document.getElementById('transaction-list');
+        
+        const newDiv = document.createElement('div');
+        newDiv.className = this.businessName; // haven't decided if I want the names to be unique
+
+        const addBusnName = document.createTextNode(this.businessName); // new text
+        const busnElement = document.createElement("P");
+        busnElement.appendChild(addBusnName);
+        newDiv.appendChild(busnElement);
+
+        const addTotal = document.createTextNode(this.cost); // will this be ok? cost is a number but it's saved as a text?
+        const costElement = document.createElement("P");
+        costElement.appendChild(addTotal);
+        newDiv.appendChild(costElement);
+
+        let people = '';
+        for (let i = 0; i < this.pplId.length; i++){
+            people += this.pplId[i].toString();
+            people += " ";
+        }
+        const addPeopleId = document.createTextNode(people);
+        const peopleElement = document.createElement("P");
+        peopleElement.appendChild(addPeopleId);
+        newDiv.appendChild(peopleElement);
+
+        // TODO: add code that handles status later
+        const addStatus = document.createTextNode("Even split");
+        const statusElement = document.createElement("P");
+        statusElement.appendChild(addStatus);
+        newDiv.appendChild(statusElement);
+
+        let payer = '';
+        for(let i = 0; i < this.payer.length; i++){
+            payer += this.payer[i].toString();
+            payer += '';
+        }
+        const addPayer = document.createTextNode(payer);
+        const payerElement = document.createElement("P");
+        payerElement.appendChild(addPayer);
+        newDiv.appendChild(payerElement);
+
+        parent.appendChild(newDiv);
+    }
 }
+
 
 // helper function for calcOwed
 function calcSingleOwed(currentTransaction, id) {

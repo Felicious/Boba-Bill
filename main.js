@@ -88,18 +88,19 @@ function addTransaction()
     let status = [];
     let payer = [];
 
-
     const radios = document.getElementsByName('radio');
     for (let i = 0; i < radios.length; i++){
         if (radios[i].checked){
             payer.push(findIndex(radios[i].value));
+            radios[i].checked = false;
             break;
         }
     }
     const checks = document.getElementsByName('checkbox');
     for(let i = 0; i < checks.length; i++){
         if (checks[i].checked){
-            splitAmong.push(checks[i].value);
+            splitAmong.push(findIndex(checks[i].value));
+            checks[i].checked = false;
         }
     }
 
@@ -111,16 +112,14 @@ function addTransaction()
     // put gathered info into constructor
     allTransactions[transCount] =
         new Transaction(busnName, amtSpent, splitAmong, status, payer);
+
+    allTransactions[transCount].displayTransaction();
+
+    // TODO: uncheck and clear everyting
+
     transCount += 1;
 
-    // for testing purposes:
-    console.log(`Business name: ${busnName}`);
-    console.log(`Amount spent: ${amtSpent}`);
-    console.log(`IDs of the people involved: ${splitAmong}`);
-    console.log(`Should be an even split, so ${status}`);
-    console.log(`The person who paid the total amt is ${payer}`);
-
-    // Error: name saved in the global profiles is "on " not felicia
+    
 
 
 }

@@ -19,16 +19,11 @@ class Transaction {
 	constructor(business, cost, id, status, payer){
 		this.businessName = business;
 		
-		if(cost < 0) {
-			console.log("Cost cannot be negative.");
-			// what would i do to indicate constructor failed?
-		}
-		else{ 
-			this.cost = cost;
-		}
+		
+		this.cost = cost;
 
 		//the following are arrays
-		this.pplId = id;
+		this.pplId = id; //split among these ppl
 		this.status = status;
 		this.payer = payer;
 

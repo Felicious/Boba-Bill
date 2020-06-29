@@ -31,21 +31,18 @@ function addFriend()
         console.log(`You left the name empty. The random name ${friend} is assigned for you :D`)
     }
     
-    if(findIndex(friend) > -1){ // yes theres a dup
-        window.alert("Friend has already been added!")
-    }
-    else {
-
-        allProfiles[profCount] = friend;
-        profCount += 1;
     
-        // show added friend on page
-        displayFriend(friend);
 
-        // add friend option to radio buttons
-        addToDropDownMenus(friend);
+    allProfiles[profCount] = friend;
+    profCount += 1;
 
-    }
+    // show added friend on page
+    displayFriend(friend);
+
+    // add friend option to radio buttons
+    addToDropDownMenus(friend);
+
+    
 }
 
 
@@ -86,25 +83,41 @@ function addTransaction()
     // get all req info from input
     const busnName = document.getElementById('business');
     const amtSpent = document.getElementById('amtSpent');
-    let payer;
     let splitAmong = [];
+    // TODO: status!! for now, fill it with zeros
+    let status = [];
+    let payer = [];
+
 
     const radios = document.getElementsByName('radio');
     for (let i = 0; i < radios.length; i++){
         if (radios[i].checked){
-            payer = radios[i].value;
+            payer.push(findIndex(radios[i].value));
             break;
         }
     }
     const checks = document.getElementsByName('checkbox');
     for(let i = 0; i < checks.length; i++){
         if (checks[i].checked){
-            splitAmong.append(checks[i]);
+            splitAmong.push(checks[i].value);
         }
     }
 
+    // TODO: handle the status-- if it's not an even split
+    for (let i = 0; i < splitAmong.length; i++){
+        status.push(0);
+    }
+
+    
     // put gathered info into constructor
-    Transaction(busnName, amtSpent, payer, splitAmong);
+    new Transaction(busnName, amtSpent, splitAmong, status, payer);
+
+    // for testing purposes:
+    console.log(`Business name: ${busnName}`);
+    console.log(`Amount spent: ${amtSpent}`);
+    console.log(`IDs of the people involved: ${splitAmong}`);
+    console.log(`Should be an even split, so ${status}`);
+    console.log(`The person who paid the total amt is ${payer}`);
 
 
 }

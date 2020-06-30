@@ -78,6 +78,8 @@ function calcOwed(firstName){
 }
 
 // transaction event handler
+// TODO: can we move more code from addFriend and addTransaction 
+//      out of main? it's so long 
 function addTransaction()
 {
     // get all req info from input
@@ -115,13 +117,12 @@ function addTransaction()
 
     allTransactions[transCount].displayTransaction();
 
-    // TODO: uncheck and clear everyting
+    // clear everything
+    // TODO: clear status too
+    document.getElementById('business').value = '';
+    document.getElementById('amtSpent').value = '';
 
     transCount += 1;
-
-    
-
-
 }
 
 

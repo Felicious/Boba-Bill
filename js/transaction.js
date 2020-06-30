@@ -18,8 +18,6 @@ class Transaction {
 	*/
 	constructor(business, cost, id, status, payer){
 		this.businessName = business;
-		
-		
 		this.cost = cost;
 
 		//the following are arrays
@@ -50,48 +48,55 @@ class Transaction {
     displayTransaction(){
         const parent = document.getElementById('transaction-list');
         
-        const newDiv = document.createElement('div');
-        newDiv.className = this.businessName; // haven't decided if I want the names to be unique
+        // all of the business' info will be saved together as a div class
+        const busnInfo = document.createElement('div');
+        busnInfo.className = this.businessName;
 
-        const addBusnName = document.createTextNode(this.businessName); // new text
-        const busnElement = document.createElement("P");
-        busnElement.appendChild(addBusnName);
-        newDiv.appendChild(busnElement);
+        busnInfo.appendChild(displayPara(this.businessName));
+        busnInfo.appendChild(displayPara(this.cost));
 
-        const addTotal = document.createTextNode(this.cost); // will this be ok? cost is a number but it's saved as a text?
-        const costElement = document.createElement("P");
-        costElement.appendChild(addTotal);
-        newDiv.appendChild(costElement);
-
+        // TODO: display the people ids in a more readable fashion
         let people = '';
         for (let i = 0; i < this.pplId.length; i++){
             people += this.pplId[i].toString();
-            people += " ";
+            if (i < (this.pplId.length - 1)){
+                people += ", ";
+            }
+           
         }
-        const addPeopleId = document.createTextNode(people);
-        const peopleElement = document.createElement("P");
-        peopleElement.appendChild(addPeopleId);
-        newDiv.appendChild(peopleElement);
+       busnInfo.appendChild(displayPara(people));
 
         // TODO: add code that handles status later
-        const addStatus = document.createTextNode("Even split");
-        const statusElement = document.createElement("P");
-        statusElement.appendChild(addStatus);
-        newDiv.appendChild(statusElement);
+        busnInfo.appendChild(displayPara("Split evenly"));
 
         let payer = '';
         for(let i = 0; i < this.payer.length; i++){
             payer += this.payer[i].toString();
-            payer += '';
+            if (i < (this.payer.length - 1)){
+                payer += ', ';
+            }
         }
-        const addPayer = document.createTextNode(payer);
-        const payerElement = document.createElement("P");
-        payerElement.appendChild(addPayer);
-        newDiv.appendChild(payerElement);
+        busnInfo.appendChild(displayPara(payer));
 
-        parent.appendChild(newDiv);
+        parent.appendChild(busnInfo);
     }
 }
+
+
+/*  wanted to reduce the number of lines in displayTransaction by abstracting a couple repeated lines,
+    but this may have served to confuse the reader instead
+
+    param: the text that will be inserted into the paragraph element
+    returns: a paragraph-type html element that displays the passed in text
+*/
+function displayPara(words)
+{
+    const addInfo = document.createTextNode(words);
+    const pElement = document.createElement("P");
+    pElement.appendChild(addInfo);
+    return pElement;
+}
+
 
 
 // helper function for calcOwed

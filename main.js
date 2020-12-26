@@ -31,8 +31,6 @@ function addFriend()
         console.log(`You left the name empty. The random name ${friend} is assigned for you :D`)
     }
     
-    
-
     allProfiles[profCount] = friend;
     profCount += 1;
 
@@ -41,13 +39,11 @@ function addFriend()
 
     // add friend option to radio buttons
     addToDropDownMenus(friend);
-
-    
 }
 
 
-function calcOwed(firstName){
-    
+function calcOwed(firstName)
+{
     // find ID of person from Profile
     const idFromProfile = findIndex(firstName);
     
@@ -125,7 +121,6 @@ function addTransaction()
     transCount += 1;
 }
 
-
 // event listeners
 
 // Profiles
@@ -143,5 +138,8 @@ addFriendWithEnter.addEventListener('keydown', (e) => {
 // Transactions
 const addTransactionInfo = document.getElementById('addTransaction');
 addTransactionInfo.addEventListener('click', addTransaction);
+
+// TODO: edit all transactions button
+// const editTransaction
 
 // export {calcOwed, allProfiles, allTransactions};

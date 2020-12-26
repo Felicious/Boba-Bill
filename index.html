@@ -9,15 +9,20 @@
   </head>
   
   <body>
-    <h1>Boba Bill</h1>
-    <p>Splitting the bill with friends, simplified</p>
-    <p>by Felicia Kuan</p>
+    <div id="app">
+      <h1>Boba Bill</h1>
+      <p>Splitting the bill with friends, simplified</p>
+      <p>by Felicia Kuan</p>
+    </div>
+  
     <hr>
 
+    <div id="app-2">
     <h2>Profiles</h2>
-    <div id="profile-list">
+    
       <p>Add your friends to the party</p>
     </div> 
+    
 
     
 
@@ -72,20 +77,12 @@
       <button id="addTransaction" type="button">Add Transaction</button>
       
     </form> 
-    
-
-
+  
     <!-- TODO: Viewing previous transactions and possibly editing them--> 
     
     <h2> Total </h2>
-    <!--- Displays what everyone owes.
-        TODO: when should the totals be calculated?
-          1) most convenient for the user
-            as transactions are added, totals automatically calculated?
-            Con of this is that it might do a lot of needless calculations
-          2) Users generate the total by clicking a button
-              like a reload button
-              Con: possibility that users may forget to reload before collecting the splits
+    <!--- Displays what everyone owes
+          Updates whenever changes are made to profiles/transaction
           -->
 
     <!--- Todo: allowing ppl to pay each other/ add payment methods?-->

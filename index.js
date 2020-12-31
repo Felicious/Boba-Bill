@@ -1,9 +1,12 @@
-let app = new Vue({
-  el: "#app",
+let landingPage = new Vue({
+  el: "#cover",
   data: {
-    message: "wowo"
+    message: "Splitting the bill with friends, simplified"
   },
+  computed: {
+      
+  }
   methods: {
-    addFriend: function() {}
+    // uuu... update page? idk if need any
   }
 });

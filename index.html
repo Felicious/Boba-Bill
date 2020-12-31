@@ -9,10 +9,9 @@
   </head>
   
   <body>
-    <div id="app">
+    <div id="cover">
       <h1>Boba Bill</h1>
-      <p>Splitting the bill with friends, simplified</p>
-      <p>by Felicia Kuan</p>
+      <p>{{ message }}</p>
     </div>
   
     <hr>
@@ -22,14 +21,11 @@
     
       <p>Add your friends to the party</p>
     </div> 
-    
-
-    
 
     <form>
 
       <label for="name">Name</label>
-      <input type="text" id="fname" maxlength="15"/>
+      <input v-model="friend" maxlength="15"/>
       <button id="addFriend" type="button">Add Friend</button>
       
       <!-- TODO: add prof pic-->
